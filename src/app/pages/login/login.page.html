@@ -1,0 +1,31 @@
+<ion-content >
+  <div class="flex-center">
+    <form [formGroup]="form"> 
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>RegistrApp</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content >
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email" [(ngModel)]='email' ></ion-input>
+          </ion-item>
+
+          <app-error-mensajes [field]="form.get('email')" error="required" message="El email es obligatorio"></app-error-mensajes>
+          <app-error-mensajes [field]="form.get('email')" error="email" message="El email debe ser el de Duoc UC"></app-error-mensajes>
+          
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password" [(ngModel)]="password" ></ion-input>
+          </ion-item>
+
+          <app-error-mensajes [field]="form.get('password')" error="required" message="La contraseña es obligatoria"></app-error-mensajes>
+
+          <ion-button class="ion-text-capitalize" color="primary" shape="round" fill="clear" expand="block">Olvide mi contraseña</ion-button>
+          <ion-button color="success" size="full" (click)="login()" (click)="guardar" [disabled]="!form.valid" >Ingresar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form> 
+   </div>
+</ion-content>
