@@ -1,4 +1,12 @@
 ion-content{
-    --background: #f4f5f8;
+    --background: url(/assets/fondomas.jpg) ;
+    --background-repeat: no-repeat;
+    --background-position: center center;
     
 }
+
+.card  {
+    background-color: white; // black
+    box-shadow: none;
+}
+

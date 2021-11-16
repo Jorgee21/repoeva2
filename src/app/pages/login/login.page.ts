@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { BdLocalService } from 'src/app/services/bd-local.service';
 import { LoginPageForm } from './login.page.form';
 
@@ -16,7 +17,7 @@ export class LoginPage implements OnInit {
   password:string;
 
 
-  constructor(private router: Router, private formBuilder: FormBuilder, public bdLocal:BdLocalService) {}
+  constructor(private router: Router, private formBuilder: FormBuilder, public bdLocal:BdLocalService, public navCtrl: NavController) {}
 
   ngOnInit() {
     this.form = new LoginPageForm(this.formBuilder).createForm();
@@ -24,7 +25,11 @@ export class LoginPage implements OnInit {
 
 
   login() {
-    this.router.navigate(['home']); 
+
+    let navigationextras: NavigationExtras={
+      state: {email: this.email}
+    }
+    this.router.navigate(['/home'], navigationextras)
     this.bdLocal.guardardatos(this.email,this.password);
 
   }

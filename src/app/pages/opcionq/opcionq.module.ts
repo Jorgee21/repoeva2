@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { OpcionqPageRoutingModule } from './opcionq-routing.module';
 
-import { HomePage } from './home.page';
-
+import { OpcionqPage } from './opcionq.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-
+    OpcionqPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [OpcionqPage]
 })
-export class HomePageModule {}
+export class OpcionqPageModule {}

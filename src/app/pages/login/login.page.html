@@ -1,23 +1,22 @@
 <ion-content >
   <div class="flex-center">
     <form [formGroup]="form"> 
-      <ion-card>
+      <ion-card >
         <ion-card-header>
-          <ion-card-title>RegistrApp</ion-card-title>
+          <ion-card-title class="ion-text-center"  >RegistrApp</ion-card-title>
         </ion-card-header>
       
-        <ion-card-content >
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email" formControlName="email" [(ngModel)]='email' ></ion-input>
+        <ion-card-content class="card" >
+          <ion-item color="blak" class="ion-padding-top" >
+            <ion-label color="primary" position="floating">Email</ion-label>
+            <ion-input color="light" type="email" formControlName="email" [(ngModel)]="email" ></ion-input>
           </ion-item>
 
-          <app-error-mensajes [field]="form.get('email')" error="required" message="El email es obligatorio"></app-error-mensajes>
-          <app-error-mensajes [field]="form.get('email')" error="email" message="El email debe ser el de Duoc UC"></app-error-mensajes>
+          <app-error-mensajes [field]="form.get('email')" error="required" message="Ingrese su Usuario Duoc"></app-error-mensajes>
           
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password" formControlName="password" [(ngModel)]="password" ></ion-input>
+          <ion-item color="blak" class="ion-padding-top">
+            <ion-label color="primary" position="floating">Password</ion-label>
+            <ion-input color="light"  type="password" formControlName="password" [(ngModel)]="password" ></ion-input>
           </ion-item>
 
           <app-error-mensajes [field]="form.get('password')" error="required" message="La contraseña es obligatoria"></app-error-mensajes>
